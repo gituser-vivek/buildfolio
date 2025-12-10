@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FiMail, FiGithub as FiGithubDev } from 'react-icons/fi';
 
 // 1. === THE FIX: Define strict types for our data ===
@@ -21,12 +21,12 @@ interface LinkColumn {
 // ======================================================
 
 // Variants for orchestrating the footer animation
-const footerContainerVariants = {
+const footerContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
 };
 
-const footerItemVariants = {
+const footerItemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
 };

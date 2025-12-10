@@ -4,17 +4,17 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, Variants } from 'framer-motion';
 import { FiMenu, FiX, FiUser, FiLogOut, FiLayout, FiLoader } from 'react-icons/fi';
 import { usePathname } from 'next/navigation';
 
 // Variants for staggering mobile menu items
-const mobileLinkVariants = {
+const mobileLinkVariants: Variants = {
   initial: { y: -20, opacity: 0 },
   open: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 300, damping: 25 } }
 };
 
-const mobileMenuVariants = {
+const mobileMenuVariants: Variants = {
   initial: { opacity: 0 },
   open: { opacity: 1, transition: { staggerChildren: 0.07 } }
 };

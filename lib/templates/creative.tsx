@@ -6,7 +6,7 @@ import {
   Project,
   SerializablePortfolio,
 } from "@/types/portfolio";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   FiLinkedin,
   FiGithub,
@@ -179,7 +179,7 @@ export function CreativeTemplate({
     }
   };
 
-  const animation = {
+  const animation: Variants = {
     initial: { x: -30, opacity: 0 },
     animate: {
       x: 0,
@@ -206,7 +206,7 @@ export function CreativeTemplate({
           <div className="max-w-xl">
             <motion.div
               {...animation}
-              transition={{ ...animation.animate.transition, delay: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
             >
               <Editable
                 html={data.name}
@@ -218,7 +218,7 @@ export function CreativeTemplate({
             </motion.div>
             <motion.div
               {...animation}
-              transition={{ ...animation.animate.transition, delay: 0.4 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
             >
               <Editable
                 html={data.bio}
@@ -230,7 +230,7 @@ export function CreativeTemplate({
             </motion.div>
             <motion.div
               {...animation}
-              transition={{ ...animation.animate.transition, delay: 0.6 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.6 }}
               className="mt-8 flex items-center gap-4"
             >
               {isEditable ? (
